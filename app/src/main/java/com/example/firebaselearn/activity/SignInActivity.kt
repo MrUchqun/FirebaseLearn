@@ -8,14 +8,12 @@ import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.example.firebaselearn.R
 import com.example.firebaselearn.managers.AuthHandler
 import com.example.firebaselearn.managers.AuthManager
 import com.example.firebaselearn.utils.Extensions.isValidEmail
 import com.example.firebaselearn.utils.Extensions.isValidPassword
 import com.example.firebaselearn.utils.Extensions.toast
-import com.google.firebase.auth.FirebaseAuth
 import java.lang.Exception
 
 class SignInActivity : BaseActivity() {
@@ -36,19 +34,17 @@ class SignInActivity : BaseActivity() {
 
         val b_signin = findViewById<Button>(R.id.b_signin)
         b_signin.setOnClickListener {
+
             val email = et_email.text.toString().trim()
             val password = et_password.text.toString().trim()
 
-            val validALl = email.isValidEmail() && password.isValidPassword()
+            val validAll =
+                tvErrorEmail("Invalid email address!", email.isValidEmail()) && tvErrorPW(
+                    "Invalid password, minimum length 6 characters!",
+                    password.isValidPassword()
+                )
 
-            if (validALl) {
-                tvErrorEmail(null, false)
-                tvErrorPW(null, false)
-                firebaseSignIn(email, password)
-            } else {
-                tvErrorEmail("Invalid email address!", !email.isValidEmail())
-                tvErrorPW("Invalid password, minimum length 6 characters", !password.isValidPassword())
-            }
+            if (validAll) firebaseSignIn(email, password)
 
         }
 
@@ -56,9 +52,9 @@ class SignInActivity : BaseActivity() {
         tv_signup.setOnClickListener { callSignUpActivity() }
     }
 
-    private fun tvErrorEmail(msg: String?, isVisible: Boolean) {
+    private fun tvErrorEmail(msg: String, isValid: Boolean): Boolean {
         val tvError = findViewById<TextView>(R.id.tv_error_email)
-        tvError.visibility = if (isVisible) {
+        tvError.visibility = if (!isValid) {
             tvError.text = msg
             et_email.setBackgroundResource(R.drawable.error_view_rounded_corner)
             VISIBLE
@@ -66,11 +62,12 @@ class SignInActivity : BaseActivity() {
             et_email.setBackgroundResource(R.drawable.view_rounded_corner)
             GONE
         }
+        return isValid
     }
 
-    private fun tvErrorPW(msg: String?, isVisible: Boolean) {
+    private fun tvErrorPW(msg: String, isValid: Boolean): Boolean {
         val tvError = findViewById<TextView>(R.id.tv_error_pw)
-        tvError.visibility = if (isVisible) {
+        tvError.visibility = if (!isValid) {
             tvError.text = msg
             et_password.setBackgroundResource(R.drawable.error_view_rounded_corner)
             VISIBLE
@@ -78,6 +75,7 @@ class SignInActivity : BaseActivity() {
             et_password.setBackgroundResource(R.drawable.view_rounded_corner)
             GONE
         }
+        return isValid
     }
 
     private fun firebaseSignIn(email: String, password: String) {
