@@ -17,7 +17,6 @@ open class BaseActivity : AppCompatActivity() {
     lateinit var context: Context
     private var progressDialog: AppCompatDialog? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         context = this

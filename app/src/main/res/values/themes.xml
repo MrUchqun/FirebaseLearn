@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.Splash" parent="Theme.FirebaseLearn">
+        <item name="android:windowBackground">@drawable/app_main_gradient</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
     <style name="CustomDialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowBackground">@android:color/transparent</item>

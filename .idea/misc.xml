@@ -3,16 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable-v23/ic_error.xml" value="0.166" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable-v24/app_main_gradient.xml" value="0.166" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable-v24/error_view_rounded_corner.xml" value="0.166" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable-v24/view_rounded_corner.xml" value="0.166" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable/ic_baseline_error_24.xml" value="0.166" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable/ic_error.xml" value="0.166" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable/loading_frame.xml" value="0.166" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/drawable/shape_circle_orange_light.xml" value="0.166" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_create.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
-        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_main.xml" value="0.26481481481481484" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_signin.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_signup.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/activity_splash.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/custom_progress_dialog.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/FirebaseLearn/app/src/main/res/layout/item_post_list.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

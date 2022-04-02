@@ -1,21 +1,18 @@
 package com.example.firebaselearn.activity
 
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import com.example.firebaselearn.R
 import com.example.firebaselearn.managers.AuthManager
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN
-//        )
         setContentView(R.layout.activity_splash)
         initViews()
     }

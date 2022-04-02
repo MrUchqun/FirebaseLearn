@@ -14,6 +14,7 @@
 
         <activity
             android:name=".activity.SplashActivity"
+            android:theme="@style/Theme.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +26,7 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.SignUpActivity" />
+        <activity android:name=".activity.CreateActivity" />
 
     </application>
 
