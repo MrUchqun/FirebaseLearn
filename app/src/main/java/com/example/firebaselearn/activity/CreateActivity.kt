@@ -64,7 +64,6 @@ class CreateActivity : BaseActivity() {
             .setImageAdapter(GlideAdapter())
             .setMaxCount(1)
             .setMinCount(1)
-            .setCamera(true)
             .hasCameraInPickerPage(true)
             .setSelectedImages(allPhotos)
             .startAlbumWithActivityResultCallback(photoLauncher)
