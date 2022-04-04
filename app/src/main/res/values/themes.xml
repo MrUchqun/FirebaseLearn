@@ -17,6 +17,7 @@
     <style name="Theme.Splash" parent="Theme.FirebaseLearn">
         <item name="android:windowBackground">@drawable/app_main_gradient</item>
         <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="CustomDialog">

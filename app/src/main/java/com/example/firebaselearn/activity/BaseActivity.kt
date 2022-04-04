@@ -50,6 +50,7 @@ open class BaseActivity : AppCompatActivity() {
             animationDrawable.start()
             if (!activity.isFinishing) progressDialog!!.show()
         }
+
     }
 
     protected fun dismissLoading() {

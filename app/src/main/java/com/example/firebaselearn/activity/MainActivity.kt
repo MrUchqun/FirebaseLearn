@@ -1,5 +1,6 @@
 package com.example.firebaselearn.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -21,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var postAdapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +31,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initViews() {
-
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = PostAdapter(this)
+        postAdapter = recyclerView.adapter as PostAdapter
 
         apiLoadPosts()
 
@@ -55,12 +58,13 @@ class MainActivity : BaseActivity() {
             }
         }
 
-    fun apiLoadPosts() {
+    private fun apiLoadPosts() {
         showLoading(this)
+        postAdapter.clearAll()
         DatabaseManager.apiLoadPosts(object : DatabaseHandler {
             override fun onSuccess(post: Post?, posts: ArrayList<Post>) {
-                dismissLoading()
                 refreshAdapter(posts)
+                dismissLoading()
             }
 
             override fun onError() {
@@ -77,6 +81,7 @@ class MainActivity : BaseActivity() {
 
             override fun onError() {
                 toast("Deleting item failed")
+                dismissLoading()
             }
         })
     }
@@ -92,7 +97,6 @@ class MainActivity : BaseActivity() {
     }
 
     fun refreshAdapter(posts: ArrayList<Post>) {
-        val adapter = PostAdapter(this, posts)
-        recyclerView.adapter = adapter
+        postAdapter.addItems(posts)
     }
 }
